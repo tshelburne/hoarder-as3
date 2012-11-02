@@ -1,0 +1,1 @@
+﻿package dls.signals {		import org.osflash.signals.ISignal;		public interface ISignalRelay extends ISignal {		function initRelay():void;				function killRelay():void;				// for some reason, IOnceSignal doesn't appear to be available		function removeAll():void;	}	}
