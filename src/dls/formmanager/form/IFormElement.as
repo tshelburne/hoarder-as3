@@ -1,1 +1,4 @@
-﻿/* * This file is part of the FormManager package. * * @author (c) Tim Shelburne <tim@dontlookstudios.com> * * For the full copyright and license information, please view the LICENSE * file that was distributed with this source code. */package dls.formmanager.form {		public interface IFormElement {				function get name():String;		function get value():*;				function get validationRules():Object;	}	}
+﻿/* * This file is part of the FormManager package. * * @author (c) Tim Shelburne <tim@dontlookstudios.com> * * For the full copyright and license information, please view the LICENSE * file that was distributed with this source code. */package dls.formmanager.form {		import dls.formmanager.validator.errors.IValidationError;
+	
+	import org.osflash.signals.Signal;
+		public interface IFormElement {				function get name():String;		function get value():*;				function get valueChanged():Signal;				function get validationRules():Object;				function addValidationError(error:IValidationError):void;				function removeValidationError(error:IValidationError):void;				function clearValidationErrors():void;	}	}
